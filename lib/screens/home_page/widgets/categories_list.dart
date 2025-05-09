@@ -5,24 +5,32 @@ import 'package:news_app/screens/home_page/widgets/category_card.dart';
 class CategoriesList extends StatelessWidget {
   final List<CategoryModel> categories = const [
     CategoryModel(
+      title: 'General',
+      image: 'assets/general.avif',
+    ),
+    CategoryModel(
       title: 'Health',
       image: 'assets/health.avif',
+    ),
+    CategoryModel(
+      title: 'Sports',
+      image: 'assets/Sports.jpg',
     ),
     CategoryModel(
       title: 'Business',
       image: 'assets/business.avif',
     ),
     CategoryModel(
+      title: 'Technology',
+      image: 'assets/Technology.jpg',
+    ),
+    CategoryModel(
       title: 'Entertainment',
-      image: 'assets/entertainment.avif',
+      image: 'assets/entertaiment.jpg',
     ),
     CategoryModel(
       title: 'Science',
       image: 'assets/science.avif',
-    ),
-    CategoryModel(
-      title: 'Sports',
-      image: 'assets/sports.avif',
     ),
   ];
   const CategoriesList({super.key});
