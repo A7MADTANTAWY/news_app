@@ -13,19 +13,17 @@ class CategoryCard extends StatelessWidget {
         color: Colors.blue,
         borderRadius: BorderRadius.circular(10),
         image: const DecorationImage(
-          image: NetworkImage(
-            'https://media.istockphoto.com/id/1437931505/photo/businessman-digital-tablet-or-strategy-planning-in-hotel-conference-lobby-or-airport-travel.jpg?s=612x612&w=0&k=20&c=OGRd22Usakx9wHTQsKto0qagIlH38sWDPEmmmXcIBSQ=',
-          ),
+          image: AssetImage('assets/health.avif'),
           fit: BoxFit.cover,
         ),
       ),
       child: Center(
         child: Text(
-          'Business',
+          'Health',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 20,
+            fontSize: 26,
             fontWeight: FontWeight.bold,
           ),
         ),
