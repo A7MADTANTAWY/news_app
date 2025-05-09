@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/screens/home_page/widgets/category_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -7,23 +8,34 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('News App'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Welcome to the News App!',
+        centerTitle: true,
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'News',
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to another screen or perform an action
-              },
-              child: const Text('Get Started'),
+            const SizedBox(width: 10),
+            Text(
+              "Cloud",
+              style: TextStyle(
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+                color: Colors.amber,
+              ),
             ),
           ],
         ),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          CategoryCard(),
+        ],
       ),
     );
   }
