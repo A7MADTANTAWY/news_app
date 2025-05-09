@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/home_page/widgets/categories_list.dart';
 import 'package:news_app/screens/home_page/widgets/latest_news_title.dart';
-import 'package:news_app/screens/home_page/widgets/news_card.dart';
+import 'package:news_app/screens/home_page/widgets/news_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -37,17 +37,33 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: ListView(children: [
-        const SizedBox(height: 8),
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: const SizedBox(height: 8),
+          ),
 
-        const CategoriesList(),
+          SliverToBoxAdapter(
+            child: const CategoriesList(),
+          ),
 
-        const LatestNewsTitle(),
+          SliverToBoxAdapter(
+            child: const SizedBox(height: 4),
+          ),
 
-        NewsCard(),
-        NewsCard(), NewsCard(), NewsCard(), NewsCard(),
-        // Add your latest news widget here
-      ]),
+          SliverToBoxAdapter(
+            child: const LatestNewsTitle(),
+          ),
+
+          SliverToBoxAdapter(
+            child: const SizedBox(height: 18),
+          ),
+
+          NewsList(),
+          // Add your latest news widget here
+        ],
+      ),
     );
   }
 }

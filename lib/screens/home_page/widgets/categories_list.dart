@@ -39,14 +39,22 @@ class CategoriesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 110,
-      child: ListView.builder(
-        itemBuilder: (context, index) {
-          return CategoryCard(
-            category: categories[index],
-          );
-        },
-        itemCount: categories.length,
-        scrollDirection: Axis.horizontal,
+      child: Row(
+        children: [
+          const SizedBox(width: 10),
+          Expanded(
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: categories.length,
+              itemBuilder: (context, index) {
+                return CategoryCard(
+                  category: categories[index],
+                );
+              },
+            ),
+          ),
+          const SizedBox(width: 10),
+        ],
       ),
     );
   }
