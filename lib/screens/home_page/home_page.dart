@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/screens/home_page/widgets/categories_list.dart';
+import 'package:news_app/screens/home_page/widgets/latest_news_title.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,7 +32,12 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: CategoriesList(),
+      body: ListView(children: [
+        const CategoriesList(),
+
+        const LatestNewsTitle(),
+        // Add your latest news widget here
+      ]),
     );
   }
 }
