@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/screens/home_page/widgets/category_card.dart';
+import 'package:news_app/screens/home_page/widgets/categories_list.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,12 +31,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          CategoryCard(),
-        ],
-      ),
+      body: CategoriesList(),
     );
   }
 }
