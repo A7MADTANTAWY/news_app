@@ -19,6 +19,7 @@ class LatestNewsTitle extends StatelessWidget {
                 'Latest News',
                 style: TextStyle(
                   fontSize: 28,
+                  color: Colors.white,
                   fontWeight: FontWeight.bold,
                 ),
               ),
