@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/screens/home_page/widgets/categories_list.dart';
+import 'package:news_app/core/models/category_model.dart';
+import 'package:news_app/screens/category_page.dart/widgets/category_card.dart';
 import 'package:news_app/screens/home_page/widgets/latest_news_title.dart';
 import 'package:news_app/screens/home_page/widgets/news_list_view_builder.dart';
 
-class HomePage extends StatefulWidget {
-  String category = 'general';
+class CategoryPage extends StatelessWidget {
+  final CategoryModel categoryModel;
 
-  HomePage({super.key});
+  const CategoryPage({super.key, required this.categoryModel});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,29 +46,21 @@ class _HomePageState extends State<HomePage> {
           SliverToBoxAdapter(
             child: const SizedBox(height: 8),
           ),
-
           SliverToBoxAdapter(
-            child: const CategoriesList(),
+            child: CategoryCard(
+                title: categoryModel.title, image: categoryModel.image),
           ),
-
           SliverToBoxAdapter(
             child: const SizedBox(height: 4),
           ),
-
           SliverToBoxAdapter(
-            child: const LatestNewsTitle(
-              title: 'General News',
+            child: LatestNewsTitle(
+              title: '${categoryModel.title} News',
             ),
           ),
-
-          SliverToBoxAdapter(
-            child: const SizedBox(height: 18),
-          ),
-
           NewsListViewBuilder(
-            category: widget.category,
+            category: categoryModel.title,
           ),
-          // Add your latest news widget here
         ],
       ),
     );

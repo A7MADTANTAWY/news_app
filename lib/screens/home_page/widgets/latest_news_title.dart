@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class LatestNewsTitle extends StatelessWidget {
-  const LatestNewsTitle({super.key});
+  final String title;
+
+  const LatestNewsTitle({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +12,13 @@ class LatestNewsTitle extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        const Padding(
+        Padding(
           padding: EdgeInsets.all(10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Latest News',
+                title,
                 style: TextStyle(
                   fontSize: 28,
                   color: Colors.white,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/models/category_model.dart';
+import 'package:news_app/screens/category_page.dart/category_page.dart';
 import 'package:news_app/screens/home_page/widgets/category_card.dart';
 
 class CategoriesList extends StatelessWidget {
@@ -49,6 +50,16 @@ class CategoriesList extends StatelessWidget {
               itemBuilder: (context, index) {
                 return CategoryCard(
                   category: categories[index],
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => CategoryPage(
+                          categoryModel: categories[index],
+                        ),
+                      ),
+                    );
+                  },
                 );
               },
             ),

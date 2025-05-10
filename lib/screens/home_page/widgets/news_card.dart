@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/core/models/news_model.dart';
 
 class NewsCard extends StatelessWidget {
-  const NewsCard({super.key});
+  final ArticleModel article;
+  const NewsCard({super.key, required this.article});
 
   @override
   Widget build(BuildContext context) {
@@ -22,33 +24,33 @@ class NewsCard extends StatelessWidget {
                 10,
               ),
             ),
-            child: Image.asset(
+            child: Image.network(
               height: 200,
               width: double.infinity,
-              'assets/Sports.jpg',
+              article.urlToImage ?? 'https://via.placeholder.com/150',
               fit: BoxFit.cover,
             ),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(10),
                 child: Text(
-                  'msmash',
+                  article.source?.name ?? 'Source',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  'Swiss National Bank Chairman Rebuffs Bitcoin as Reserve Asset',
+                  article.title ?? 'Title',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
