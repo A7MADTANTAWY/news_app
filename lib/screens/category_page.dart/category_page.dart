@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:news_app/core/models/category_model.dart';
 import 'package:news_app/screens/category_page.dart/widgets/category_card.dart';
-import 'package:news_app/screens/home_page/widgets/latest_news_title.dart';
-import 'package:news_app/screens/home_page/widgets/news_list_view_builder.dart';
+import 'package:news_app/core/widgets/latest_news_title.dart';
+import 'package:news_app/core/widgets/news_list_view_builder.dart';
 
 class CategoryPage extends StatelessWidget {
   final CategoryModel categoryModel;
