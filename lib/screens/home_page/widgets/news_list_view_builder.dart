@@ -37,7 +37,17 @@ class _NewsListViewBuilderState extends State<NewsListViewBuilder> {
           } else {
             return const SliverToBoxAdapter(
               child: Center(
-                child: CircularProgressIndicator(),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 100,
+                    ),
+                    CircularProgressIndicator(
+                      color: Colors.amber,
+                      strokeWidth: 2,
+                    ),
+                  ],
+                ),
               ),
             );
           }

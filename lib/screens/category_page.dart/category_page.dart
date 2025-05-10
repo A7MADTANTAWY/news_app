@@ -14,6 +14,9 @@ class CategoryPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF121212),
       appBar: AppBar(
+        iconTheme: const IconThemeData(
+          color: Colors.white,
+        ),
         backgroundColor: Colors.transparent,
         scrolledUnderElevation: 0,
         centerTitle: true,

@@ -3,6 +3,7 @@ import 'package:news_app/screens/home_page/widgets/categories_list.dart';
 import 'package:news_app/screens/home_page/widgets/latest_news_title.dart';
 import 'package:news_app/screens/home_page/widgets/news_list_view_builder.dart';
 
+// ignore: must_be_immutable
 class HomePage extends StatefulWidget {
   String category = 'general';
 
