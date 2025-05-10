@@ -35,7 +35,7 @@ class NewsCard extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.all(10),
                 child: Text(
-                  'Latest Sports News',
+                  'msmash',
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -48,7 +48,7 @@ class NewsCard extends StatelessWidget {
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                  'Swiss National Bank Chairman Rebuffs Bitcoin as Reserve Asset',
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
