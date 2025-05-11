@@ -36,10 +36,32 @@ class NewsCard extends StatelessWidget {
                 ),
               ),
               child: Image.network(
+                article.urlToImage ?? '',
                 height: 200,
                 width: double.infinity,
-                article.urlToImage ?? 'https://via.placeholder.com/150',
                 fit: BoxFit.cover,
+                loadingBuilder: (BuildContext context, Widget child,
+                    ImageChunkEvent? loadingProgress) {
+                  if (loadingProgress == null) return child;
+                  return SizedBox(
+                    height: 200,
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 2,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  );
+                },
+                errorBuilder: (context, error, stackTrace) {
+                  return SizedBox(
+                    height: 200,
+                    child: Center(
+                      child: Icon(Icons.broken_image,
+                          size: 50, color: Colors.grey),
+                    ),
+                  );
+                },
               ),
             ),
             Column(
