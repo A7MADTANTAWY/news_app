@@ -1,32 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/core/models/category_model.dart';
 
 class CategoryCard extends StatelessWidget {
-  const CategoryCard({super.key});
+  final void Function() onTap;
+  final CategoryModel category;
+  const CategoryCard({
+    super.key,
+    required this.category,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 130,
-      width: 200,
-      margin: const EdgeInsets.only(right: 5, left: 5),
-      decoration: BoxDecoration(
-        color: Colors.blue,
-        borderRadius: BorderRadius.circular(10),
-        image: const DecorationImage(
-          image: NetworkImage(
-            'https://media.istockphoto.com/id/1437931505/photo/businessman-digital-tablet-or-strategy-planning-in-hotel-conference-lobby-or-airport-travel.jpg?s=612x612&w=0&k=20&c=OGRd22Usakx9wHTQsKto0qagIlH38sWDPEmmmXcIBSQ=',
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 180,
+        margin: const EdgeInsets.only(right: 5, left: 5),
+        decoration: BoxDecoration(
+          color: Colors.amber,
+          borderRadius: BorderRadius.circular(10),
+          image: DecorationImage(
+            image: AssetImage(category.image),
+            fit: BoxFit.cover,
           ),
-          fit: BoxFit.cover,
         ),
-      ),
-      child: Center(
-        child: Text(
-          'Business',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+        child: Center(
+          child: Text(
+            category.title,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
